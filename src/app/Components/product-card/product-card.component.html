@@ -1,0 +1,23 @@
+<div
+  class="card mx-2 my-3 px-3 py-2 product-card clickable"
+  style="min-width: 18rem; max-height: 20rem"
+>
+  <img
+    [src]="product.image"
+    class="img-fluid rounded-start product-card-image"
+    [alt]="product.title"
+  />
+  <div class="card-body">
+    <h5 class="card-title text-truncate clickable">
+      {{ product.title }}
+    </h5>
+    <dl class="row">
+      <dt class="col col-sm-5">Price</dt>
+      <dd class="col col-sm-7">$ {{ product.price }}</dd>
+      <dt class="col col-sm-5">Category</dt>
+      <dd class="col col-sm-7">
+        {{ product.category }}
+      </dd>
+    </dl>
+  </div>
+</div>

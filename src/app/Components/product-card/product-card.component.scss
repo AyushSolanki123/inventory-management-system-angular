@@ -1,0 +1,16 @@
+.product-card-image {
+  height: 10rem;
+  max-width: 10rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.product-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+  border: 2px solid black;
+}
