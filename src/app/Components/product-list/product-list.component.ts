@@ -8,7 +8,8 @@ import { Product } from 'src/app/Models/Product';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  products!: [Product];
+  products!: Array<Product>;
+  filteredProducts!: Array<Product>;
   loading!: boolean;
 
   constructor() {
@@ -25,11 +26,28 @@ export class ProductListComponent {
     axios(requestOptions)
       .then((response) => {
         this.products = response.data;
+        this.filteredProducts = response.data;
         this.loading = false;
-        console.log(this.products);
       })
       .catch((error) => {
         console.log(error);
+        this.loading = false;
       });
+  }
+
+  searchProducts(search: string) {
+    this.filteredProducts = this.products.filter((product) =>
+      product.title.toLowerCase().match(search.toLowerCase())
+    );
+  }
+
+  filterProducts(category: string) {
+    if (category === 'all') {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter(
+        (product) => product.category.toLowerCase() === category.toLowerCase()
+      );
+    }
   }
 }

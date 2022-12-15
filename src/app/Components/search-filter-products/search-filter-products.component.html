@@ -1,0 +1,44 @@
+<div class="container-fluid row my-2">
+  <!-- search products -->
+  <div class="col-md-6">
+    <div class="row">
+      <label for="search-products" class="form-label">Search Products</label>
+      <div class="col-7">
+        <input
+          type="text"
+          [(ngModel)]="search"
+          class="form-control"
+          id="search-products"
+          placeholder="Search"
+        />
+      </div>
+      <div class="col-4 offset-1">
+        <button class="btn btn-outline-secondary" (click)="searchProducts()">
+          <div *ngIf="!isSearch; else elseBlock">Search</div>
+          <ng-template #elseBlock>Reset</ng-template>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- filter products -->
+  <div class="col-md-4 offset-md-2">
+    <div class="row">
+      <label for="filter-products" class="form-label">Filter Products</label>
+      <div class="col-7">
+        <select [(ngModel)]="filter" class="form-select" id="filter-products">
+          <option selected ngValue="all">All</option>
+          <option ngValue="electronics">Electronics</option>
+          <option ngValue="jewelery">Jewelery</option>
+          <option ngValue="men's clothing">Men's Clothing</option>
+          <option ngValue="women's clothing">Women's Clothing</option>
+        </select>
+      </div>
+      <div class="col-4 offset-1">
+        <button class="btn btn-outline-success" (click)="filterProducts()">
+          Filter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
