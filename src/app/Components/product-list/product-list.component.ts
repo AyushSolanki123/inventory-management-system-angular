@@ -35,6 +35,10 @@ export class ProductListComponent {
       });
   }
 
+  handleRoutes(product: Product) {
+    localStorage.setItem('product', JSON.stringify(product));
+  }
+
   searchProducts(search: string) {
     this.filteredProducts = this.products.filter((product) =>
       product.title.toLowerCase().match(search.toLowerCase())

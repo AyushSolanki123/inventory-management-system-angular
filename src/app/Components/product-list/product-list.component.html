@@ -8,7 +8,12 @@
       *ngFor="let product of filteredProducts; index as i"
       class="col-lg-3 col-md-4 col-sm-6"
     >
-      <app-product-card [product]="product"></app-product-card>
+      <a routerLink="/detail" aria-current="page">
+        <app-product-card
+          (click)="handleRoutes(product)"
+          [product]="product"
+        ></app-product-card>
+      </a>
     </div>
   </div>
 </div>

@@ -8,6 +8,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProductCardComponent } from './Components/product-card/product-card.component';
 import { SearchFilterProductsComponent } from './Components/search-filter-products/search-filter-products.component';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './Components/product-detail/product-detail.component';
+import { AuthComponent } from './Components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ProductCardComponent,
     SearchFilterProductsComponent,
+    ProductDetailComponent,
+    AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
