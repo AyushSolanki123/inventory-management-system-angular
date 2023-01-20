@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { Product } from 'src/app/Models/Product';
 
@@ -7,13 +7,16 @@ import { Product } from 'src/app/Models/Product';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   products!: Array<Product>;
   filteredProducts!: Array<Product>;
   loading!: boolean;
 
   constructor() {
     this.loading = true;
+  }
+
+  ngOnInit() {
     this.getAllProducts();
   }
 

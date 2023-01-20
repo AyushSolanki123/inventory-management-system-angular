@@ -10,6 +10,8 @@ import { SearchFilterProductsComponent } from './Components/search-filter-produc
 import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './Components/product-detail/product-detail.component';
 import { AuthComponent } from './Components/auth/auth.component';
+import { LoginComponent } from './Components/auth/login/login.component';
+import { RegisterComponent } from './Components/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AuthComponent } from './Components/auth/auth.component';
     SearchFilterProductsComponent,
     ProductDetailComponent,
     AuthComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

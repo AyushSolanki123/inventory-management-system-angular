@@ -1,1 +1,26 @@
-<p>auth works!</p>
+<div class="card auth-card absolute-center bg-light">
+  <div class="card-section col separator">
+    <div class="image">
+      <img
+        class="col-7"
+        src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/130/000000/external-shopper-shopping-and-e-commerce-smashingstocks-circular-smashing-stocks.png"
+      />
+      <h5 class="col-5 text-center text-bold">Fake-Store</h5>
+      <div class="col-5 text-center">Your One Stop Solution</div>
+    </div>
+  </div>
+  <div class="card-section col">
+    <div *ngIf="isLogin; else elseBlock">
+      <app-login
+        (register)="changeAuth($event)"
+        (login)="loginUser($event)"
+      ></app-login>
+    </div>
+    <ng-template #elseBlock>
+      <app-register
+        (login)="changeAuth($event)"
+        (register)="registerUser($event)"
+      ></app-register>
+    </ng-template>
+  </div>
+</div>
