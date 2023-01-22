@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ProductDetailComponent } from './Components/product-detail/product-deta
 import { AuthComponent } from './Components/auth/auth.component';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
+import { cartReducer } from './store/cart.reducers';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,12 @@ import { RegisterComponent } from './Components/auth/register/register.component
     LoginComponent,
     RegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    StoreModule.forRoot({ cartEntries: cartReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

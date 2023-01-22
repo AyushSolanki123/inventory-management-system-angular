@@ -14,11 +14,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item mx-2">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+        <li class="nav-item row">
+          <a class="nav-link col" href="#"
+            >Cart
+            <span class="col text-black translate-middle badge rounded-pill">
+              {{ countProducts$ | async }}
+            </span>
+          </a>
         </li>
       </ul>
       <form class="d-flex" role="search">

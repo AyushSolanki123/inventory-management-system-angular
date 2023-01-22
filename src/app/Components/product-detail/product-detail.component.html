@@ -22,7 +22,9 @@
               {{ product.category }}
             </dd>
           </dl>
-          <button type="button" class="btn btn-primary">Add to Cart</button>
+          <button class="btn btn-primary" (click)="addProductToCart(product)">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
