@@ -22,9 +22,21 @@
               {{ product.category }}
             </dd>
           </dl>
-          <button class="btn btn-primary" (click)="addProductToCart(product)">
-            Add to Cart
-          </button>
+          <div class="count-product">
+            <button
+              class="btn btn-danger h5"
+              (click)="removeProductFromCart(product)"
+            >
+              <span class="h5"> - </span>
+            </button>
+            <span class="mx-2 h5"> {{ count }} </span>
+            <button
+              class="btn btn-primary h5"
+              (click)="addProductToCart(product)"
+            >
+              <span class="h5"> + </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

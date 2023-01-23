@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/Models/Product';
-import { addProduct } from 'src/app/store/cart.actions';
+import { addProduct, removeProduct } from 'src/app/store/cart.actions';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,14 +11,22 @@ import { addProduct } from 'src/app/store/cart.actions';
 export class ProductDetailComponent {
   localProduct!: string | null;
   product!: Product;
+  count!: number;
 
   constructor(private store: Store) {
+    this.count = 0;
     this.localProduct = localStorage.getItem('product');
     if (this.localProduct !== null) {
       this.product = JSON.parse(this.localProduct);
     }
   }
   public addProductToCart(product: Product) {
+    this.count += 1;
     this.store.dispatch(addProduct(product));
+  }
+
+  public removeProductFromCart(product: Product) {
+    this.count -= 1;
+    this.store.dispatch(removeProduct(product));
   }
 }
