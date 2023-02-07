@@ -1,8 +1,10 @@
 <div class="bg-gray-400 root">
   <div *ngIf="router.url !== '/auth'; else elseBlock">
     <app-navbar [title]="title"></app-navbar>
-    <div class="container mb-3">
-      <h1 class="text-center">{{ title }}</h1>
+    <div *ngIf="router.url == '/'">
+      <div class="container mb-3">
+        <h1 class="text-center">{{ title }}</h1>
+      </div>
     </div>
   </div>
   <ng-template #elseBlock> </ng-template>

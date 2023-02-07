@@ -14,6 +14,8 @@ import { AuthComponent } from './Components/auth/auth.component';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { cartReducer } from './store/cart.reducers';
+import { CartComponent } from './Components/cart/cart.component';
+import { CartItemComponent } from './Components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { cartReducer } from './store/cart.reducers';
     AuthComponent,
     LoginComponent,
     RegisterComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
